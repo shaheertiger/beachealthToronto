@@ -1,0 +1,13 @@
+{
+  "name": "beachealth-site",
+  "private": true,
+  "description": "Beach Health clinic website (beachealth.com) — static, mobile-first, SEO and AI-search optimized.",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "SITE_URL=http://localhost:8080 FORCE_INDEX=1 CNAME=0 node build.mjs && node scripts/serve.mjs",
+    "import": "node scripts/import-wordpress.mjs https://beachealth.com",
+    "check": "node scripts/check.mjs"
+  }
+}
