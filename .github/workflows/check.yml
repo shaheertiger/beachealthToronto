@@ -1,0 +1,23 @@
+name: Check site
+
+# Hosting is on Vercel (see vercel.json). This workflow only verifies every push:
+# all legacy URLs resolve, no broken internal links, valid JSON-LD, and vercel.json is up to date.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node build.mjs
+      - run: node scripts/check.mjs
+      - name: vercel.json matches the build
+        run: git diff --exit-code vercel.json || (echo "Run 'npm run build' and commit vercel.json" && exit 1)

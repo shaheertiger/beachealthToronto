@@ -1,0 +1,1975 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node build.mjs && node scripts/check.mjs",
+  "outputDirectory": "dist",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.beachealth.com"
+        }
+      ],
+      "destination": "https://beachealth.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap_index.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/concussion/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/concussion",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/arthritis-osteo-or-rheumatoid/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/arthritis-osteo-or-rheumatoid",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/the-nervous-system/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/the-nervous-system",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/movement-breaks/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/movement-breaks",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/spondylolisthesis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/spondylolisthesis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/knee-osteoarthritis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/knee-osteoarthritis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/imaging-and-low-back-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/imaging-and-low-back-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/gluteal-tendinopathy/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/gluteal-tendinopathy",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/connective-tissue-disease/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/connective-tissue-disease",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/athletes-foot/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/athletes-foot",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/facet-lock/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/facet-lock",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/vertigo/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/vertigo",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/winging-of-the-shoulder-blades/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/winging-of-the-shoulder-blades",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/prevention-of-running-injuries/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/prevention-of-running-injuries",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/pilates-with-jen-ingram/",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/pilates-with-jen-ingram",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/pandemic-posture/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/pandemic-posture",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/dorsal-scapular-nerve-entrapment/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/dorsal-scapular-nerve-entrapment",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/exercises-for-ageing-bones/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/exercises-for-ageing-bones",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/dead-butt-syndrome/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/dead-butt-syndrome",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/plantar-fasciitis-2/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/plantar-fasciitis-2",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/chronic-inflammation/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/chronic-inflammation",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/calluses/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/calluses",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/de-quervains-tenosynovitis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/de-quervains-tenosynovitis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/compression-stockings/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/compression-stockings",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/concussions-and-our-kids-in-sports/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/concussions-and-our-kids-in-sports",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/ankle-sprains/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/ankle-sprains",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/numbness-and-tingling/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/numbness-and-tingling",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/ice-or-heat/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/ice-or-heat",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/visceral-manipulation/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/visceral-manipulation",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/is-the-empty-can-test-a-good-rehab-exercise/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/is-the-empty-can-test-a-good-rehab-exercise",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/swift-treatment-for-warts/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/swift-treatment-for-warts",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/cranial-osteopathy-and-cranio-sacral-therapy/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/cranial-osteopathy-and-cranio-sacral-therapy",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/pregnancy-and-osteopathy/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/pregnancy-and-osteopathy",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/foam-rolling/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/foam-rolling",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/plantar-fasciitis/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/plantar-fasciitis",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/achilles-tendinitis/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/achilles-tendinitis",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/tennis-elbow/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/tennis-elbow",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/10-tips-to-get-ready-for-summer-activity/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/10-tips-to-get-ready-for-summer-activity",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/proper-posture-at-your-office/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/proper-posture-at-your-office",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteoarthritis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteoarthritis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/shin-splints/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/shin-splints",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/tmj/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/tmj",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/rotator-cuff-injury/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/rotator-cuff-injury",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/sacroiliac-joint-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/sacroiliac-joint-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/back-to-work-desk-tips-to-remember/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/back-to-work-desk-tips-to-remember",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/medial-epicondylitis-golfers-elbow/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/medial-epicondylitis-golfers-elbow",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/getting-your-bike-setup-correctly/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/getting-your-bike-setup-correctly",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/most-common-basketball-injuries/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/most-common-basketball-injuries",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/headaches-migraines-treatment-and-prevention/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/headaches-migraines-treatment-and-prevention",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/orthotics/",
+      "destination": "/services/chiropody/orthotics/",
+      "permanent": true
+    },
+    {
+      "source": "/orthotics",
+      "destination": "/services/chiropody/orthotics/",
+      "permanent": true
+    },
+    {
+      "source": "/self-care-isnt-selfish/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/self-care-isnt-selfish",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/calf-muscle-strain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/calf-muscle-strain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-for-neck-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-for-neck-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/have-you-tried-pilates/",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/have-you-tried-pilates",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/exercise-for-osteoporosis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/exercise-for-osteoporosis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathic-treatment-for-arthritis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathic-treatment-for-arthritis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-diabetes/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-diabetes",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/rsi/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/rsi",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/mobilizing-your-joints/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/mobilizing-your-joints",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/diaphragm-function/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/diaphragm-function",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/are-your-joints-popping-grinding-or-clicking/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/are-your-joints-popping-grinding-or-clicking",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/medical-pedicures-by-a-chiropodist/",
+      "destination": "/services/chiropody/medical-pedicure/",
+      "permanent": true
+    },
+    {
+      "source": "/medical-pedicures-by-a-chiropodist",
+      "destination": "/services/chiropody/medical-pedicure/",
+      "permanent": true
+    },
+    {
+      "source": "/lumbar-disc-prolapse/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/lumbar-disc-prolapse",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/new-facial-spa-services-and-microneedling/",
+      "destination": "/services/dry-needling/",
+      "permanent": true
+    },
+    {
+      "source": "/new-facial-spa-services-and-microneedling",
+      "destination": "/services/dry-needling/",
+      "permanent": true
+    },
+    {
+      "source": "/bunions/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/bunions",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/diabetes-and-foot-care/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/diabetes-and-foot-care",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/venous-insufficiency-aching-swelling-and-spider-veins/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/venous-insufficiency-aching-swelling-and-spider-veins",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/medial-ankle-sprain/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/medial-ankle-sprain",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/boost-your-balance-and-embrace-stability/",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/boost-your-balance-and-embrace-stability",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/carpal-tunnel-symdrome/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/carpal-tunnel-symdrome",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/get-ahead-of-the-school-year/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/get-ahead-of-the-school-year",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/your-first-osteopathy-appointment/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/your-first-osteopathy-appointment",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/laser-season-is-here/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/laser-season-is-here",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-quadricep-strains/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-quadricep-strains",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/ingrown-toenails/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/ingrown-toenails",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-osteoporosis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-osteoporosis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/office-worker-elbow/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/office-worker-elbow",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/inflammation-and-the-connection-to-your-immune-system/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/inflammation-and-the-connection-to-your-immune-system",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/hip-osteoarthritis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/hip-osteoarthritis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/plantar-warts/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/plantar-warts",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/stress-fractures-how-a-chiropodist-can-help/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/stress-fractures-how-a-chiropodist-can-help",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/subacromial-impingement-an-osteopathic-perspective/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/subacromial-impingement-an-osteopathic-perspective",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/turning-resolutions-into-reality-insights-from-your-osteopath/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/turning-resolutions-into-reality-insights-from-your-osteopath",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-for-musicians/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-for-musicians",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-or-cracked-feet-how-a-chiropodist-can-help/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-or-cracked-feet-how-a-chiropodist-can-help",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/type-2-diabetes-and-osteopathic-care/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/type-2-diabetes-and-osteopathic-care",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/lymphatic-drainage-massage-a-comprehensive-guide/",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/lymphatic-drainage-massage-a-comprehensive-guide",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-respiratory-syncytial-virus-rsv/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-respiratory-syncytial-virus-rsv",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/introducing-our-new-chiropodist/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/introducing-our-new-chiropodist",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/juvenile-idiopathic-scoliosis-a-comprehensive-guide/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/juvenile-idiopathic-scoliosis-a-comprehensive-guide",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-disc-injuries-an-osteopaths-perspective/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-disc-injuries-an-osteopaths-perspective",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/increase-shoulder-stability-through-exercise/",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/increase-shoulder-stability-through-exercise",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/why-are-my-joints-so-noisy-an-osteopaths-view/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/why-are-my-joints-so-noisy-an-osteopaths-view",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/how-osteopathy-can-help-you-recover-after-a-fracture/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/how-osteopathy-can-help-you-recover-after-a-fracture",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/successful-treatment-for-warts/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/successful-treatment-for-warts",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/tackling-twisted-knees/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/tackling-twisted-knees",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-cervical-kyphosis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-cervical-kyphosis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-dequervains-tenosynovitis/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-dequervains-tenosynovitis",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-swift-wart-removal/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-swift-wart-removal",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/been-told-you-need-a-hip-replacement/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/been-told-you-need-a-hip-replacement",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/heart-health-all-about-your-cardiovascular-system/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/heart-health-all-about-your-cardiovascular-system",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-intercostal-muscle-strain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-intercostal-muscle-strain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/how-are-your-new-years-goals-going-psst-its-not-too-late/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/how-are-your-new-years-goals-going-psst-its-not-too-late",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-its-not-just-about-cracking/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-its-not-just-about-cracking",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/radio-frequency-rf-aesthetics-treatments/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/radio-frequency-rf-aesthetics-treatments",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/shin-splints-2/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/shin-splints-2",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-arthritis-understanding-the-aches-and-how-osteopathy-can-help/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-arthritis-understanding-the-aches-and-how-osteopathy-can-help",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-muscle-strains/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/all-about-muscle-strains",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/tarsal-tunnel-syndrome/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/tarsal-tunnel-syndrome",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/planning-for-the-year-ahead/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/planning-for-the-year-ahead",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/to-my-valued-clients/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/to-my-valued-clients",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-scaphoid-fractures/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-scaphoid-fractures",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/what-are-antioxidants-and-how-can-i-get-them-into-my-diet/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/what-are-antioxidants-and-how-can-i-get-them-into-my-diet",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/the-sesamoid-bones/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/the-sesamoid-bones",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-support-a-loved-one-with-dementia/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-support-a-loved-one-with-dementia",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/reducing-the-risk-of-falls-as-we-age-steady-steps/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/reducing-the-risk-of-falls-as-we-age-steady-steps",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/get-to-know-our-rmts/",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/get-to-know-our-rmts",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/from-frustration-to-recovery-a-smarter-approach-to-tendon-pain/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/from-frustration-to-recovery-a-smarter-approach-to-tendon-pain",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/the-aging-shoulder/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/the-aging-shoulder",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-needling-explained/",
+      "destination": "/services/dry-needling/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-needling-explained",
+      "destination": "/services/dry-needling/",
+      "permanent": true
+    },
+    {
+      "source": "/team/dale-jones/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/dale-jones",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/emily-tran/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/emily-tran",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/patrice-wilson/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/patrice-wilson",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/jared-cox/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/jared-cox",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/emily-tran-2/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/emily-tran-2",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/lada-milos-lee/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/lada-milos-lee",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/dradambletsoe/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/dradambletsoe",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/jake-maher/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/jake-maher",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/krystele-charles/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/krystele-charles",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/category/acupuncture/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/acupuncture",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/aesthetics/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/aesthetics",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/back-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/back-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/chiropody/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/category/chiropody",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/category/exercise/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/exercise",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/fitness/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/fitness",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/foot-pain/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/category/foot-pain",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/category/foot-problems/",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/category/foot-problems",
+      "destination": "/services/chiropody/",
+      "permanent": true
+    },
+    {
+      "source": "/category/fractures/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/fractures",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/health/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/health",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/hip-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/hip-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/joint-pain-osteopathy/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/joint-pain-osteopathy",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/joint-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/joint-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/massage-therapy/",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/massage-therapy",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/naturopathy/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/naturopathy",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/nerve-related-injuries/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/nerve-related-injuries",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/nutrition/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/nutrition",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/posture/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/posture",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/pregnancy/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/pregnancy",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/respiratory-issues/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/respiratory-issues",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/running-injuries/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/category/running-injuries",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/shoulder/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/osteopathy/shoulder",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/sports-injuries/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/sports-injuries",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/tendon-injury/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/tendon-injury",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/visceral-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/visceral-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/location/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/login-customizer/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/login-customizer",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-toronto/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopathy-toronto",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopath-toronto/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/osteopath-toronto",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/running-clinic/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/running-clinic",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/patella-tendinopathy/",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/patella-tendinopathy",
+      "destination": "/services/shockwave-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/postural-problems/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/postural-problems",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/scans-common-questions/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/scans-common-questions",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/sciatica/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/sciatica",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/sports-injuries/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/sports-injuries",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/why-osteopathy/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/why-osteopathy",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/sports-injuries/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/sports-injuries",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/sports-injuries/running-injury-program/",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/sports-injuries/running-injury-program",
+      "destination": "/services/running-analysis/",
+      "permanent": true
+    },
+    {
+      "source": "/admin-page-changed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/admin-page-changed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/job-opportunities/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/job-opportunities",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/https-beachealth-com-team-emily-tran/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/https-beachealth-com-team-emily-tran",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/pilates-physiotherapist/",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/pilates-physiotherapist",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/registered-massage-therapist/",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/registered-massage-therapist",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/aesthetics/spider-veins-varicose-veins/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/aesthetics/spider-veins-varicose-veins",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/naturopathy/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/naturopathy",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/back-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/back-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/disc-prolapse/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/disc-prolapse",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/headaches/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/headaches",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/neck-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/neck-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/osteopathy-for-lower-back-pain/",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/osteopathy/osteopathy-for-lower-back-pain",
+      "destination": "/services/osteopathy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/pilates/",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/services/pilates",
+      "destination": "/services/physio-pilates/",
+      "permanent": true
+    },
+    {
+      "source": "/services/acupuncture/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/acupuncture",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/aesthetics/",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/aesthetics",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/tmj-massage/",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/tmj-massage",
+      "destination": "/services/massage-therapy/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "missing": [
+        {
+          "type": "host",
+          "value": "beachealth.com"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/wp-content/uploads/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

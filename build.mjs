@@ -587,7 +587,43 @@ write("llms-full.txt", `# ${C.name} — full site content\n\n${factsMd()}\n\n` +
 // Manifest, IndexNow-friendly host files
 write("site.webmanifest", JSON.stringify({ name: C.name, short_name: C.name, start_url: u("/"), scope: u("/"), display: "standalone", background_color: "#f3eee5", theme_color: C.themeColor, icons: [{ src: u("/apple-touch-icon.png"), sizes: "180x180", type: "image/png" }, { src: u("/icon-512.png"), sizes: "512x512", type: "image/png" }] }, null, 2));
 write(".nojekyll", "");
-if (INDEXABLE && new URL(DEPLOY).hostname !== "localhost" && process.env.CNAME !== "0") write("CNAME", new URL(PROD).hostname + "\n");
+
+// vercel.json — real 301s for legacy URLs that have no page yet, www → apex, caching and security headers.
+// Regenerated on every build so it always matches the imported content; commit it after `npm run build`.
+// Vercel previews (*.vercel.app) get `X-Robots-Tag: noindex` so only beachealth.com is indexed.
+const apex = new URL(PROD).hostname;
+const vercel = {
+  $schema: "https://openapi.vercel.sh/vercel.json",
+  framework: null,
+  buildCommand: "node build.mjs && node scripts/check.mjs",
+  outputDirectory: "dist",
+  trailingSlash: true,
+  redirects: [
+    { source: "/:path*", has: [{ type: "host", value: "www." + apex }], destination: `https://${apex}/:path*`, permanent: true },
+    { source: "/feed", destination: "/feed.xml", permanent: true },
+    { source: "/feed/", destination: "/feed.xml", permanent: true },
+    { source: "/wp-sitemap.xml", destination: "/sitemap_index.xml", permanent: true },
+    { source: "/wp-admin/:path*", destination: "/", permanent: false },
+    { source: "/wp-login.php", destination: "/", permanent: false },
+    ...redirects.flatMap(([, from, to]) => [
+      { source: from, destination: to, permanent: true },
+      { source: from.replace(/\/$/, ""), destination: to, permanent: true }
+    ]).filter((r) => r.source)
+  ],
+  headers: [
+    { source: "/(.*)", headers: [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+      { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" }
+    ] },
+    { source: "/(.*)", missing: [{ type: "host", value: apex }], headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
+    { source: "/assets/(.*)", headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }] },
+    { source: "/wp-content/uploads/(.*)", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] }
+  ]
+};
+if (!process.env.VERCEL) fs.writeFileSync(path.join(ROOT, "vercel.json"), JSON.stringify(vercel, null, 2) + "\n");
 
 // ---------- report ----------
 const count = (g) => [...pages.values()].filter((p) => p.group === g).length;
